@@ -1,0 +1,23 @@
+:root
+  --color-accent-light: hsl(142, 100%, 30%)
+  --color-background: #fefefe
+  --color-text: #000000
+  --font-size-medium: 1.8rem
+
+  @media screen and (prefers-color-scheme: dark)
+    --color-accent-light: hsl(142, 100%, 30%)
+    --color-background: #171717
+    --color-text: #fefefe
+
+html
+  font-family: "Overused Grotesk", system-ui, sans-serif
+  font-size: 20px
+  color: var(--color-text)
+
+a
+  color: var(--color-text)
+  text-decoration-style: wavy
+  &:hover
+    color: var(--color-accent-light)
+  &:visited
+    text-decoration: none
