@@ -22,7 +22,7 @@ const socialLinks = [
 
 <Layout title="Nathan Zartre">
   <main>
-    <h1>Hi</h1>
+    <h1 id="hi">Hi</h1>
     <h1 id="full-name">I'm Nathan<span>Zartre</span></h1>
     <p id="intro">
       A software engineer with 4 years of experience in <strong>fintech</strong
@@ -90,6 +90,11 @@ const socialLinks = [
     @media screen and (max-width: 670px)
       margin-top: 1rem
       font-size: 3.5rem
+  #hi
+    @media screen and (min-width: 370px) and (max-width: 409px)
+      text-align: right
+    @media screen and (min-width: 410px)
+      text-align: left
   #full-name
     text-align: right
     margin-bottom: 2.4rem
