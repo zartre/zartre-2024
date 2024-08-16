@@ -4,37 +4,47 @@ import Layout from "../layouts/Layout.astro";
 import TopNav from "../components/TopNav.astro";
 import { Image } from 'astro:assets';
 
-const compilation = await getCollection('work', ({ data }) => {
-  return data.tags.includes('Portfolio');
-});
+const works = await getCollection("work");
 
-const projects = await getCollection('work', ({ data }) => {
-  return !data.tags.includes('Portfolio');
-});
+const compilation = works.filter(({data}) => {
+  return data.tags.includes("Portfolio") && !data.hidden;
+}).sort((a, b) => a.data.date.getTime() + b.data.date.getTime());
+
+const projects = works.filter(({ data }) => {
+  return data.tags.every((tag) => !["Portfolio", "High school project", "University project"].includes(tag)) && !data.hidden;
+}).sort((a, b) => a.data.date.getTime() + b.data.date.getTime());
+
+const schoolProjects = works.filter(({ data }) => {
+  return data.tags.some((tag) => ["High school project", "University project"].includes(tag)) && !data.hidden;
+}).sort((a, b) => a.data.date.getTime() + b.data.date.getTime());
+
+const sections = [
+  { title: "Compilation", items: compilation },
+  { title: "Projects", items: projects },
+  { title: "School Projects", items: schoolProjects },
+];
 ---
 
 <Layout title="Work by Nathan">
   <TopNav />
   <main class="container">
     <h1>Nathan's Work</h1>
-    <h2>Compilation</h2>
-    <r-grid columns=12>
-      { compilation.map(item => (<r-cell span-l=4 span=6 span-s=12>
-        <Image src={item.data.image} width=700 height=394 quality=90 alt={item.data.title}/>
-        <h4>{item.data.title}</h4>
-        <p>{item.data.period}</p>
-      </r-cell>))}
-    </r-grid>
-    <h2>Projects</h2>
-    <r-grid columns=12>
-      { projects.map(item => (<r-cell span-l=4 span=6 span-s=12>
-        <Image src={item.data.image} width=700 height=394 quality=90 alt={item.data.title}/>
-        <h4>{item.data.title}</h4>
-        <p>{item.data.period}</p>
-      </r-cell>))}
-    </r-grid>
+    {sections.map(( section ) => (
+      <section>
+        <h2>{section.title}</h2>
+        <r-grid columns=12>
+          {section.items.map((item) => (
+            <r-cell span-l=4 span=6 span-s=12>
+              <Image src={item.data.image} width=700 height=394 quality=90 alt={item.data.title} />
+              <h4>{item.data.title}</h4>
+              <p>{item.data.period}</p>
+            </r-cell>
+          ))}
+        </r-grid>
+      </section>
+    ))}
   </main>
-  <footer></footer>
+  <footer/>
 </Layout>
 
 <style lang="sass">

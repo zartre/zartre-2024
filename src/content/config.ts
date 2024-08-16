@@ -9,6 +9,7 @@ const workCollection = defineCollection({
       image: image(),
       period: z.string(),
       tags: z.array(z.string()),
+      hidden: z.boolean().optional(),
     }),
 });
 
