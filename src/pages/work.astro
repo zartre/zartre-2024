@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+import TopNav from "../components/TopNav.astro";
+import { Image } from 'astro:assets';
+
+const compilation = await getCollection('work', ({ data }) => {
+  return data.tags.includes('Portfolio');
+});
+
+const projects = await getCollection('work', ({ data }) => {
+  return !data.tags.includes('Portfolio');
+});
+---
+
+<Layout title="Work by Nathan">
+  <TopNav />
+  <main class="container">
+    <h1>Nathan's Work</h1>
+    <h2>Compilation</h2>
+    <r-grid columns=12>
+      { compilation.map(item => (<r-cell span-l=4 span=6 span-s=12>
+        <Image src={item.data.image} width=700 height=394 quality=90 alt={item.data.title}/>
+        <h4>{item.data.title}</h4>
+        <p>{item.data.period}</p>
+      </r-cell>))}
+    </r-grid>
+    <h2>Projects</h2>
+    <r-grid columns=12>
+      { projects.map(item => (<r-cell span-l=4 span=6 span-s=12>
+        <Image src={item.data.image} width=700 height=394 quality=90 alt={item.data.title}/>
+        <h4>{item.data.title}</h4>
+        <p>{item.data.period}</p>
+      </r-cell>))}
+    </r-grid>
+  </main>
+  <footer></footer>
+</Layout>
+
+<style lang="sass">
+h1
+  margin: 2.5rem 0 3rem
+h4
+  margin: 0.8rem 0 0.5rem
+p
+  margin: 0 0 1rem
+img
+  display: block
+  width: 100%
+  height: auto
+footer
+  height: 100px
+</style>
