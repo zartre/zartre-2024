@@ -1,22 +1,25 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from "../layouts/Layout.astro";
-import TopNav from "../components/TopNav.astro";
 import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import TopNav from "../components/TopNav.astro";
+import Layout from "../layouts/Layout.astro";
 
 const works = await getCollection("work");
 
+const sortByDate = (a: CollectionEntry<"work">, b: CollectionEntry<"work">) => b.data.date.getTime() - a.data.date.getTime();
+
 const compilation = works.filter(({data}) => {
   return data.tags.includes("Portfolio") && !data.hidden;
-}).sort((a, b) => a.data.date.getTime() + b.data.date.getTime());
+}).sort(sortByDate);
 
 const projects = works.filter(({ data }) => {
   return data.tags.every((tag) => !["Portfolio", "High school project", "University project"].includes(tag)) && !data.hidden;
-}).sort((a, b) => a.data.date.getTime() + b.data.date.getTime());
+}).sort(sortByDate);
 
 const schoolProjects = works.filter(({ data }) => {
   return data.tags.some((tag) => ["High school project", "University project"].includes(tag)) && !data.hidden;
-}).sort((a, b) => a.data.date.getTime() + b.data.date.getTime());
+}).sort(sortByDate);
 
 const sections = [
   { title: "Compilation", items: compilation },
