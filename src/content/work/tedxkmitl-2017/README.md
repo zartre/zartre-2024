@@ -2,7 +2,7 @@
 title: "TEDxKMITL 2017"
 date: 2017-02-01
 slug: tedxkmitl-2017
-image: ./images/tedxkmitl-hero.jpg
+image: ./images/tedxkmitl-hero-crop.jpg
 period: Feb - Apr 2017
 tags:
 - Website

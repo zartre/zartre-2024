@@ -2,7 +2,7 @@
 title: My Portfolio (2015)
 date: 2015-08-01
 slug: portfolio-2015
-image: ./images/Portfolio-2015.png
+image: ./images/Portfolio-2015-crop.png
 period: Aug 2015 - Mar 2016
 tags:
 - Portfolio

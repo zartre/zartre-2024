@@ -2,7 +2,7 @@
 title: ITKMITL Open House 2016
 date: 2016-07-01
 slug: itkmitloh-2016
-image: ./images/itkmitloh16-hero.jpg
+image: ./images/itkmitloh16-hero-crop.jpg
 period: Jul 2016
 tags:
 - Website

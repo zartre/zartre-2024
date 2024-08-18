@@ -2,7 +2,7 @@
 title: "ACSP Student Council"
 date: 2015-03-01
 slug: acsp-student-council
-image: ./images/acsp-sc-hero.jpg
+image: ./images/acsp-sc-hero-crop.jpg
 period: Mar 2015 - Feb 2016
 tags:
 - Video
@@ -18,7 +18,7 @@ Our team really put an effort into re-branding the student council's image to be
 being accessible and that advertised policies would be completed.
 
 > The election was a huge success.
-We operated the whole term transparently: 
+We operated the whole term transparently:
 everything we did was published online and communicated.
 We completed almost every, if not all, policies we had proposed.
 All activities gained high engagement.

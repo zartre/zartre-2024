@@ -2,7 +2,7 @@
 title: "IT Ambassador"
 date: 2017-08-01
 slug: it-ambassador
-image: ./images/it-ambassador-hero-wide.jpg
+image: ./images/it-ambassador-hero-wide-crop.jpg
 period: Aug 2017
 tags:
 - Video
