@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import TopNav from '../../components/TopNav.astro';
+
+export async function getStaticPaths() {
+  const workEntries = await getCollection('posts');
+  return workEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+  <TopNav/>
+  <article>
+    <div class="meta">
+      <h1>{entry.data.title}</h1>
+      <p>{entry.data.tags ? entry.data.tags.join(", ") : ""}</p>
+    </div>
+    <div class="content">
+      <Content />
+    </div>
+  </article>
+  <footer/>
+</Layout>
+
+<style lang="sass">
+article
+  .meta
+    h1
+      font-weight: 300
+      text-align: center
+footer
+  height: 100px
+</style>
