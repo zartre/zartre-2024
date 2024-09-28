@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import WorkLayout from '../../layouts/WorkLayout.astro';
 import TopNav from '../../components/TopNav.astro';
 
 export async function getStaticPaths() {
@@ -14,7 +14,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={entry.data.title}>
+<WorkLayout title={entry.data.title}>
   <TopNav/>
   <article>
     <div class="meta">
@@ -26,11 +26,9 @@ const { Content } = await entry.render();
     </div>
   </article>
   <footer/>
-</Layout>
+</WorkLayout>
 
 <style lang="sass">
 body
   background-color: var(--color-background)
-footer
-  height: 100px
 </style>
