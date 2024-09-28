@@ -3,11 +3,16 @@ import "normalize.css";
 import "../styles/raster.css";
 import "../styles/app.sass";
 import "../styles/post.sass";
+import { Image } from 'astro:assets';
+import TopNav from "../components/TopNav.astro";
+import type { CollectionEntry } from "astro:content";
+
 interface Props {
-  title: string;
+  post: CollectionEntry<"posts">;
 }
 
-const { title } = Astro.props;
+const { post } = Astro.props;
+const { Content } = await post.render();
 ---
 
 <!doctype html>
@@ -21,9 +26,20 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ovo&display=swap" rel="stylesheet">
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{post.data.title}</title>
   </head>
   <body>
-    <slot />
+    <TopNav />
+    <article>
+      <div class="meta">
+        <h1>{post.data.title}</h1>
+        <p>{post.data.tags ? post.data.tags.join(", ") : ""} - {post.data.date.toLocaleString()}</p>
+      </div>
+      {post.data.coverImage && <Image src={post.data.coverImage} alt={post.data.title} class="cover" />}
+      <div class="content">
+        <Content />
+      </div>
+    </article>
+    <footer/>
   </body>
 </html>

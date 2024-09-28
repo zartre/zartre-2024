@@ -1,31 +1,15 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
-import TopNav from '../../components/TopNav.astro';
 
 export async function getStaticPaths() {
-  const workEntries = await getCollection('posts');
-  return workEntries.map(entry => ({
+  const postEntries = await getCollection('posts');
+  return postEntries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
 ---
 
-<PostLayout title={entry.data.title}>
-  <TopNav/>
-  <article>
-    <div class="meta">
-      <h1>{entry.data.title}</h1>
-      <p>{entry.data.tags ? entry.data.tags.join(", ") : ""} - {entry.data.date.toLocaleString()}</p>
-    </div>
-    {entry.data.coverImage && <Image src={entry.data.coverImage} alt={entry.data.title} class="cover" />}
-    <div class="content">
-      <Content/>
-    </div>
-  </article>
-  <footer/>
-</PostLayout>
+<PostLayout post={entry} />
