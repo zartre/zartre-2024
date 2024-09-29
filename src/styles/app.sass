@@ -3,8 +3,8 @@
   --color-background: #fff6f4
   --color-text: #000000
   --font-size-medium: 1.8rem
-  --font-family-main: "Overused Grotesk", system-ui, sans-serif
-  --font-family-accent: "Ovo", serif
+  --font-family-main: "Overused Grotesk", system-ui, "Sukhumvit Set", Leelawadee, sans-serif
+  --font-family-accent: "Petrona", serif
 
   @media screen and (prefers-color-scheme: dark)
     --color-accent-light: hsl(142, 100%, 30%)
@@ -28,6 +28,7 @@ h2
 p
   font-family: var(--font-family-accent)
   font-size: 0.9rem
+  line-height: 1.4em
 
 a
   color: var(--color-text)
@@ -36,6 +37,10 @@ a
     color: var(--color-accent-light)
   &:visited
     text-decoration: none
+
+ol, ul
+  li > p
+    margin: 0.6em 0
 
 .container
   max-width: 1000px

@@ -5,6 +5,7 @@ import "../styles/app.sass";
 import "../styles/post.sass";
 import { Image } from 'astro:assets';
 import TopNav from "../components/TopNav.astro";
+import { formatDate } from "../utils/date";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -21,11 +22,12 @@ const { Content } = await post.render();
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ovo&display=swap" rel="stylesheet">
-    <meta name="generator" content={Astro.generator} />
+    <link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/overused-grotesk" rel="stylesheet">
     <title>{post.data.title}</title>
   </head>
   <body>
@@ -33,7 +35,7 @@ const { Content } = await post.render();
     <article>
       <div class="meta">
         <h1>{post.data.title}</h1>
-        <p>{post.data.tags ? post.data.tags.join(", ") : ""} - {post.data.date.toLocaleString()}</p>
+        <p>{post.data.tags ? post.data.tags.join(", ") : ""} - {formatDate(post.data.date)}</p>
       </div>
       {post.data.coverImage && <Image src={post.data.coverImage} alt={post.data.title} class="cover" />}
       <div class="content">
