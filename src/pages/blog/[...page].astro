@@ -1,0 +1,44 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import TopNav from "../../components/TopNav.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await getCollection("posts");
+  return paginate(
+    posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+    { pageSize: 9 }
+  );
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<Layout title="Nathan's Blog">
+  <TopNav />
+  <main class="container">
+    <h1>Nathan's Blog</h1>
+    <ul>
+      <r-grid columns=12>
+        {page.data.map((post) => (
+          <r-cell span-l=4 span=6 span-s=12>
+            <li>
+              <a href={`${Astro.url}/${post.slug}`}>{post.data.title}</a>
+            </li>
+          </r-cell>
+        ))}
+      </r-grid>
+    </ul>
+    <ul class="pagination">
+      {page.url.prev && <li>
+        <a href={page.url.prev}>Previous</a>
+      </li>}
+      {page.url.next && <li>
+        <a href={page.url.next}>Next</a>
+      </li>}
+    </ul>
+  </main>
+  <footer/>
+</Layout>
