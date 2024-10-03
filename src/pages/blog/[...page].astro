@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import TopNav from "../../components/TopNav.astro";
 import Layout from "../../layouts/Layout.astro";
+import { formatDate } from '../../utils/date';
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getCollection("posts");
@@ -20,12 +21,13 @@ const { page } = Astro.props;
   <TopNav />
   <main class="container">
     <h1>Nathan's Blog</h1>
-    <ul>
+    <ul class="posts">
       <r-grid columns=12>
         {page.data.map((post) => (
           <r-cell span-l=4 span=6 span-s=12>
             <li>
-              <a href={`${Astro.url}/${post.slug}`}>{post.data.title}</a>
+              <h2><a href={`/blog/${post.slug}`}>{post.data.title}</a></h2>
+              <span>{formatDate(post.data.date)}</span>
             </li>
           </r-cell>
         ))}
@@ -33,12 +35,40 @@ const { page } = Astro.props;
     </ul>
     <ul class="pagination">
       {page.url.prev && <li>
-        <a href={page.url.prev}>Previous</a>
+        <a href={page.url.prev}>← Newer</a>
       </li>}
       {page.url.next && <li>
-        <a href={page.url.next}>Next</a>
+        <a href={page.url.next}>Older →</a>
       </li>}
     </ul>
   </main>
   <footer/>
 </Layout>
+
+<style lang="sass">
+body
+  background-color: var(--color-background)
+.container
+  max-width: 1200px
+ul
+  a
+    text-decoration: none
+  &.posts
+    list-style-type: none
+    margin: 2rem 0
+    padding: 0
+    h2
+      font-family: var(--font-family-accent)
+      font-size: 1.5rem
+      font-variation-settings: "wdth" 50, "GRAD" 20
+      font-weight: 220
+    span
+      font-size: 0.9rem
+  &.pagination
+    display: flex
+    gap: 1.2em
+    justify-content: center
+    list-style-type: none
+    margin: 3rem 0 1rem
+    padding: 0
+</style>
