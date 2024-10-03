@@ -2,13 +2,24 @@ article
   h1, h2, h3, h4, h5, h6
     font-weight: 400
     font-variation-settings: "wdth" 30, "GRAD" 20
-  p
+  h1
+    font-size: 2.1rem
+  h2
+    font-size: 1.8rem
+  p, ol, ul
+    font-family: var(--font-family-accent)
+    font-size: 0.9rem
     font-variation-settings: "wdth" 80, "GRAD" 20
+    line-height: 1.4em
     text-align: justify
   a
     text-decoration: underline var(--color-text) dotted
   strong
     font-weight: 600
+  ol, ul
+    li, li > p
+      margin: 0.6em 0
+      text-align: left
   blockquote
     border-left: 2px solid var(--color-text)
     font-size: 1.2em
