@@ -2,6 +2,7 @@
 import "normalize.css";
 import "../styles/raster.css";
 import "../styles/app.sass";
+import "../styles/article.sass";
 import "../styles/post.sass";
 import { Image } from 'astro:assets';
 import TopNav from "../components/TopNav.astro";
@@ -26,7 +27,7 @@ const { Content } = await post.render();
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wdth,wght,GRAD@0,8..144,50..150,100..900,-50..100;1,8..144,50..150,100..900,-50..100&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/overused-grotesk" rel="stylesheet">
     <title>{post.data.title}</title>
   </head>
@@ -45,3 +46,8 @@ const { Content } = await post.render();
     <footer/>
   </body>
 </html>
+
+<style lang="sass">
+body
+  background-color: var(--color-background)
+</style>

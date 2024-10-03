@@ -4,7 +4,7 @@
   --color-text: #000000
   --font-size-medium: 1.8rem
   --font-family-main: "Overused Grotesk", system-ui, "Sukhumvit Set", Leelawadee, sans-serif
-  --font-family-accent: "Roboto Serif", "Petrona", serif
+  --font-family-accent: "Roboto Serif", serif
 
   @media screen and (prefers-color-scheme: dark)
     --color-accent-light: hsl(142, 100%, 30%)
@@ -15,12 +15,14 @@ html
   font-family: var(--font-family-main)
   font-size: 20px
   color: var(--color-text)
+  @media screen and (max-width: 600px)
+    font-size: 16px
 
 footer
   height: 100px
 
 h1
-  font-size: 2.3rem
+  font-size: 2.1rem
 
 h2
   font-size: 1.8rem
