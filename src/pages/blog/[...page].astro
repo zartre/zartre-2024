@@ -6,7 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 import { formatDate } from '../../utils/date';
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const posts = await getCollection("posts");
+  const posts = await getCollection("posts", ({ data }) => data.public);
   return paginate(
     posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
     { pageSize: 9 }
