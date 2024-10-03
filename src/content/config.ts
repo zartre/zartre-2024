@@ -9,6 +9,7 @@ const postCollection = defineCollection({
       coverImage: z.optional(image()),
       categories: z.optional(z.array(z.string())),
       tags: z.optional(z.array(z.string())),
+      public: z.optional(z.boolean()),
     }),
 });
 
