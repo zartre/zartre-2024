@@ -19,7 +19,7 @@ In the end it was the Toyota Corolla Hybrid that made the cut. I prefer hybrids 
 
 <figure>
 
-![](IMG-6063.webp)
+![](./images/IMG-6063.webp)
 <figcaption>
 My car during a trip in Nan, Thailand
 </figcaption>
@@ -45,7 +45,7 @@ Earlier this year I tried a new-to-me kind of tea, _tieguanyin_, at _Peace_ tea 
 
 <figure>
 
-![](DSCF0953-squoosh.webp)
+![](./images/DSCF0953-squoosh.webp)
 <figcaption>
 Making matcha at home
 </figcaption>
@@ -53,7 +53,7 @@ Making matcha at home
 
 <figure>
 
-![](tieguanyin.webp)
+![](./images/tieguanyin.webp)
 <figcaption>
 Making my first tieguanyin
 </figcaption>
@@ -71,7 +71,7 @@ This year I have found my travel style: slow and immersive. I knew that I travel
 
 <figure>
 
-![](DSCF9486.webp)
+![](../a-week-in-kyoto-and-osaka-part-1/images/DSCF9486.webp)
 <figcaption>
 Ine, Kyoto
 </figcaption>
