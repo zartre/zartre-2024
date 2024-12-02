@@ -26,7 +26,7 @@ During the event, we also had a monitor which acted as a social board where any 
 It updated in real-time and, well, supported emojis.
 
 <div class="buttons">
-<a href="https://blog.zartre.com/tedxkmitl2017-1e92f18687de" class="button">Read the story</a>
+<a href="https://blog.zartre.com/2017/a-story-behind-tedxkmitl-2017-website-1e92f18687de/" class="button">Read the story</a>
 </div>
 
 **Roles:**
