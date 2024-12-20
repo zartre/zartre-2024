@@ -30,7 +30,9 @@ Sleeping works perfectly with no issues.
 
 However, my Microsoft Bluetooth Mouse would not work. I could get it connect but it just kept blinking. The Keychron keyboard works fine. (At last I managed to get the mouse to connect properly by following this [guide](https://www.youtube.com/watch?v=J-6yq5RMFqA).)
 
-Another caveat is that the fingerprint scanner on this laptop is not supported by [fprint]([https://fprint.freedesktop.org]\(https://fprint.freedesktop.org/\)). I was able to find a patch, though, but it has yet to be merged to the main release.
+~~Another caveat is that the fingerprint scanner on this laptop is not supported by [fprint]([https://fprint.freedesktop.org]\(https://fprint.freedesktop.org/\)). I was able to find a patch, though, but it has yet to be merged to the main release.~~
+
+Update (Dec 2024): The fingerprint scanner has been working for some months now!
 
 # Performance
 
