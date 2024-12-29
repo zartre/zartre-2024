@@ -2,9 +2,9 @@
 title: "Because you can write"
 date: 2024-06-12
 categories:
-  - "random"
+  - "Thoughts"
 tags:
-  - "ai"
+  - "tech"
 public: true
 ---
 

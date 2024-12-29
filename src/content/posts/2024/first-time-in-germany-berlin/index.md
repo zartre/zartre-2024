@@ -2,10 +2,9 @@
 title: "First time in Germany - Berlin"
 date: 2024-04-28
 categories:
-  - "travel"
+  - "Travel"
 tags:
   - "germany"
-  - "travel"
 coverImage: "./images/berlin-hero.webp"
 public: true
 ---

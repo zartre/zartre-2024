@@ -2,7 +2,7 @@
 title: "My Favourite Shots - Jan 2024"
 date: 2024-02-25
 categories:
-  - "photography"
+  - "Photography"
 coverImage: "./images/fav-photos-01-hero.webp"
 public: true
 ---

@@ -2,10 +2,9 @@
 title: "A simple guide to public transport in Germany for travelers"
 date: 2024-04-22
 categories:
-  - "travel"
+  - "Travel"
 tags:
   - "germany"
-  - "travel"
 coverImage: "./images/alexanderplatz-u-bahn.webp"
 public: true
 ---
