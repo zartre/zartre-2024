@@ -2,9 +2,10 @@
 title: "Contact Tracing the Thai Way: QR Codes"
 date: 2020-05-20
 categories:
-  - "life"
+  - "Thoughts"
 tags:
-  - "pandemic"
+  - "bangkok"
+  - "tech"
 coverImage: "./images/1_Y2Itbc1dC63rVgtfAYjUJA.webp"
 public: true
 ---

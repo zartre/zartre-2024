@@ -2,9 +2,9 @@
 title: "How I Carried Out My Senior Project: the Tools"
 date: 2020-02-29
 categories:
-  - "life"
+  - "Life"
 tags:
-  - "school"
+  - "productivity"
 coverImage: "./images/1_uYCmwdzSO6ktWl3S1Ayy1g.webp"
 public: true
 ---

@@ -2,9 +2,9 @@
 title: "Life during a pandemic"
 date: 2020-04-04
 categories:
-  - "life"
+  - "Life"
 tags:
-  - "pandemic"
+  - "bangkok"
 coverImage: "./images/1_GUqmfhQX_R-7Fs-3971qtw.webp"
 public: true
 ---

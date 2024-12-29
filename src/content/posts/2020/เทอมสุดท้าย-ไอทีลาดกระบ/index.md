@@ -2,7 +2,7 @@
 title: "เทอมสุดท้าย ไอทีลาดกระบัง"
 date: 2020-05-11
 categories:
-  - "life"
+  - "Life"
 tags:
   - "school"
 coverImage: "./images/Mahalai_The_Series.jpg"

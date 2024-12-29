@@ -2,9 +2,9 @@
 title: "I Waved Goodbye to Google Authenticator"
 date: 2020-01-17
 categories:
-  - "tech"
+  - "Thoughts"
 tags:
-  - "apps"
+  - "tech"
 coverImage: "./images/1_F_msHScNk0tPVQDShxpOVw.webp"
 public: true
 ---
