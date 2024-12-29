@@ -2,9 +2,9 @@
 title: "เมื่อผมลืมสอบปลายภาควิชาหนึ่ง"
 date: 2018-12-07
 categories:
-  - "life"
+  - "Life"
 tags:
-  - "school"
+  - "university"
 coverImage: "./images/1DFpXalH1ojLe-nDvU5gB1w.png"
 public: true
 ---

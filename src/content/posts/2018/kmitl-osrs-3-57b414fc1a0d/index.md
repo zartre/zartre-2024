@@ -2,10 +2,9 @@
 title: "เว็บจองห้อง KMITL OSRS โปรเจ็กต์เดียว 3 วิชา"
 date: 2018-05-19
 categories:
-  - "tech"
+  - "Project"
 tags:
-  - "projects"
-  - "school"
+  - "university"
 coverImage: "./images/KMITL-OSRS.png"
 public: true
 ---

@@ -2,9 +2,7 @@
 title: "Nathan’s 10 Years with the Web"
 date: 2018-11-03
 categories:
-  - "life"
-tags:
-  - "journal"
+  - "Life"
 coverImage: "./images/16g1M3hp_s53SmIer86Kc1Q.png"
 public: true
 ---
