@@ -2,7 +2,7 @@
 title: "Driving through the worst rain I've ever seen"
 date: 2023-09-22
 categories:
-  - "life"
+  - "Life"
 public: true
 ---
 

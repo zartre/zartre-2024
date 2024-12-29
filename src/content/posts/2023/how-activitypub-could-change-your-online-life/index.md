@@ -2,9 +2,9 @@
 title: "How ActivityPub could change your online life"
 date: 2023-09-19
 categories:
-  - "tech"
+  - "Thoughts"
 tags:
-  - "social-network"
+  - "tech"
 coverImage: "./images/cube-mesh.webp"
 public: true
 ---

@@ -2,8 +2,9 @@
 title: "zhong/tea.nity Bangkok - A traditional tea room with an urban twist"
 date: 2023-11-13
 categories:
-  - "life"
+  - "Travel"
 tags:
+  - "bangkok"
   - "food"
 coverImage: "./images/teanity-hero.webp"
 public: true

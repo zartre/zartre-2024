@@ -2,10 +2,9 @@
 title: "What happens when you pay with credit cards"
 date: 2023-10-21
 categories:
-  - "tech"
+  - "Thoughts"
 tags:
-  - "finance"
-  - "tech"
+  - "knowledge"
 coverImage: "./images/mark-oflynn-bqjswIxbhEE-unsplash.webp"
 public: true
 ---

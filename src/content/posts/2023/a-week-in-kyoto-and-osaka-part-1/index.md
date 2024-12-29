@@ -2,10 +2,9 @@
 title: "A week in Kyoto and Osaka - Part 1"
 date: 2023-07-15
 categories:
-  - "travel"
+  - "Travel"
 tags:
   - "japan"
-  - "travel"
 coverImage: "./images/DSCF9431.webp"
 public: true
 ---
