@@ -2,9 +2,10 @@
 title: "22 Essential Apps I Use in 2022"
 date: 2022-07-28
 categories:
-  - "tech"
+  - "Thoughts"
 tags:
-  - "apps"
+  - "productivity"
+  - "review"
 coverImage: "./images/1_2gvOZOFd8Nn5cln4g6yiNg.webp"
 public: true
 ---

@@ -2,10 +2,9 @@
 title: "Set up a local SFTP server in minutes with SFTPGo"
 date: 2022-09-07
 categories:
-  - "tech"
+  - "Tutorial"
 tags:
-  - "programming"
-  - "tutorial"
+  - "dev"
 coverImage: "./images/1_PkYJWJ3n4G07W0CNCysYwg.webp"
 public: true
 ---
