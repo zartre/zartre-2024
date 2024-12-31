@@ -2,10 +2,9 @@
 title: "A week in Kyoto and Osaka - Finding peace in Uji"
 date: 2023-08-04
 categories:
-  - "travel"
+  - "Travel"
 tags:
   - "japan"
-  - "travel"
 coverImage: "./images/DSCF9673-op.webp"
 public: true
 ---

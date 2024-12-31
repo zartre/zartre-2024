@@ -2,9 +2,7 @@
 title: "บันทึกเกณฑ์ทหาร 4 เม.ย. 2562"
 date: 2019-04-05
 categories:
-  - "life"
-tags:
-  - "journal"
+  - "Life"
 coverImage: "./images/1ZepPkk69xuPWrd11qRlkOw.jpg"
 public: true
 ---

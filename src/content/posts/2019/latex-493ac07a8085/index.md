@@ -2,9 +2,9 @@
 title: "เริ่มเขียน LaTeX เบื้องต้น"
 date: 2019-10-08
 categories:
-  - "tech"
+  - "Tutorials"
 tags:
-  - "tutorial"
+  - "dev"
 coverImage: "./images/1XF-1pdcttSzXu-5spGULHA.jpg"
 public: true
 ---

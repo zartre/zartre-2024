@@ -2,10 +2,9 @@
 title: "บันทึกฝึกงาน KBTG Internship 2019 ในทีม K Plus"
 date: 2019-08-02
 categories:
-  - "life"
+  - "Life"
 tags:
   - "career"
-  - "journal"
 coverImage: "./images/1-JrvzVnXM_FwJyBo58yDdA@2x.jpg"
 public: true
 ---

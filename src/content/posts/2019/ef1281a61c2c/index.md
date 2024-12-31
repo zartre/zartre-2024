@@ -2,9 +2,7 @@
 title: "บันทึกการไปงานเปิดตัวสินค้าครั้งแรก"
 date: 2019-08-08
 categories:
-  - "life"
-tags:
-  - "journal"
+  - "Life"
 coverImage: "./images/1Htb6Po7EsbTmQIS932BtAg.jpg"
 public: true
 ---

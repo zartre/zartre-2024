@@ -2,7 +2,7 @@
 title: "My Favourite Shots - Feb 2024"
 date: 2024-04-07
 categories:
-  - "photography"
+  - "Photography"
 coverImage: "./images/DSC00370.webp"
 public: true
 ---

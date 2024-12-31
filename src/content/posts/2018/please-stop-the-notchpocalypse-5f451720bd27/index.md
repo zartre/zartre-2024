@@ -2,10 +2,9 @@
 title: "Please, Stop the Notchpocalypse"
 date: 2018-03-08
 categories:
-  - "tech"
+  - "Thoughts"
 tags:
-  - "iphone"
-  - "phones"
+  - "tech"
 coverImage: "./images/1bu8zIbdQe17wCnbaHvoVsQ.jpg"
 public: true
 ---

@@ -2,9 +2,7 @@
 title: "2023: A Year in Review"
 date: 2023-12-30
 categories:
-  - "life"
-tags:
-  - "journal"
+  - "Life"
 coverImage: "./images/2023-review-hero.webp"
 public: true
 ---

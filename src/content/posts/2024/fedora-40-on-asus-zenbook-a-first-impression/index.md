@@ -2,10 +2,10 @@
 title: "Fedora 40 on Asus Zenbook: A First Impression"
 date: 2024-06-16
 categories:
-  - "tech"
+  - "Thoughts"
 tags:
-  - "laptop"
-  - "linux"
+  - "review"
+  - "tech"
 coverImage: "./images/asus-zenbook-fedora-laid-flat.webp"
 public: true
 ---

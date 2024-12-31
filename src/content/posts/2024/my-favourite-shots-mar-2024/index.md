@@ -2,7 +2,7 @@
 title: "My Favourite Shots - Mar 2024"
 date: 2024-06-19
 categories:
-  - "photography"
+  - "Photography"
 public: true
 ---
 

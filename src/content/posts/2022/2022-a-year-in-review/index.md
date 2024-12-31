@@ -2,9 +2,7 @@
 title: "2022: A Year in Review"
 date: 2022-12-29
 categories:
-  - "life"
-tags:
-  - "journal"
+  - "Life"
 coverImage: "./images/1_IlkRP2sA9Z7zmv_kcGm-kw.webp"
 public: true
 ---

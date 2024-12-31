@@ -2,7 +2,7 @@
 title: "8 Work Lessons: 1 Year as a Software Engineer"
 date: 2021-08-01
 categories:
-  - "life"
+  - "Life"
 tags:
   - "career"
 coverImage: "./images/1_OUnie__0ntxfYjOAGlTiaA.webp"

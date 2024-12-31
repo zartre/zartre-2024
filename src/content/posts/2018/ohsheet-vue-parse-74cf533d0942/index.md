@@ -2,9 +2,9 @@
 title: "OhSheet! เว็บแชร์โน้ตเลคเชอร์ที่สร้างด้วย Vue และ Parse"
 date: 2018-12-20
 categories:
-  - "tech"
+  - "Project"
 tags:
-  - "school"
+  - "university"
 coverImage: "./images/1_ve0NKyJzEFMIS7Ld5dvGcQ.webp"
 public: true
 ---
