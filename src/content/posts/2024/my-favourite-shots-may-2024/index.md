@@ -2,8 +2,7 @@
 title: "My Favourite Shots - May 2024"
 date: 2024-12-19
 categories:
-  - "photography"
-coverImage: "./images/DSCF2981.webp"
+  - "Photography"
 public: true
 ---
 
