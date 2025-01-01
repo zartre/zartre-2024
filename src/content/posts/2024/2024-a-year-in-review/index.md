@@ -27,6 +27,8 @@ I got to know them by chance by exploring them on Apple Music
 because I was curious what kind of music they had apart from the hits.
 I was fortunate to have seen them perform live.
 
+By the last week of December I completed the German course in Duolingo.
+
 Currently we're experiencing an event that challenges us as a family.
 Going through these times, I'm grateful that we have each other.
 
