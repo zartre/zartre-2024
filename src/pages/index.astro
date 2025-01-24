@@ -90,11 +90,23 @@ const linkedInURL = "https://linkedin.com/in/zartre";
 <style lang="sass">
   html
     background-color: var(--color-background)
+  body
     padding-top: 58px
+    @media screen and (max-width: 640px)
+      padding-top: 24px
+    @media screen and (max-width: 375px)
+      padding-top: 0
   section#hero
     padding: 16px 24px
   svg#site-name
     margin-bottom: 70px
+    @media screen and (max-width: 640px)
+      width: 100%
+      max-width: 300px
+      margin-bottom: 26px
+    @media screen and (max-width: 375px)
+      max-width: 240px
+      margin-bottom: 4px
     path
       fill: var(--color-text)
   .bio
@@ -103,9 +115,16 @@ const linkedInURL = "https://linkedin.com/in/zartre";
     justify-content: space-between
     align-items: flex-end
     margin-bottom: 24px
+    @media screen and (max-width: 640px)
+      flex-direction: column
+      align-items: flex-start
+      row-gap: 16px
+      margin-bottom: 44px
     p
       font-size: 32px
       margin: 0
+      @media screen and (max-width: 640px)
+        font-size: 26px
     span
       font-size: 16px
       margin: 0
