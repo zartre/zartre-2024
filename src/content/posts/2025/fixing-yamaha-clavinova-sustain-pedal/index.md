@@ -13,7 +13,7 @@ My parents bought me and my sister a Yamaha digital piano
 around 2008 (I guess).
 Since then it has required no repair
 but recently the sustain pedal is not working.
-Following some tutorials on YouTube, I think I may be able to fix it.
+Following some tutorials on YouTube, I thought I may be able to fix it.
 
 It was simple enough.
 I just had to remove the main keyboard unit
