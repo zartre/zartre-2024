@@ -1,7 +1,9 @@
 ---
 import Button from "../components/Button.astro";
 import Buttons from "../components/Buttons.astro";
+import codeIcon from "../icons/icons8-code-50.png"
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
 
 const blogURL = import.meta.env.VITE_BLOG_URL;
 const linkedInURL = "https://linkedin.com/in/zartre";
@@ -9,7 +11,7 @@ const linkedInURL = "https://linkedin.com/in/zartre";
 
 <Layout title="Nathan Zartre">
   <main>
-    <section id="hero" class="container">
+    <section id="hero" class="container-padded">
       <svg
         id="site-name"
         width="409"
@@ -70,6 +72,24 @@ const linkedInURL = "https://linkedin.com/in/zartre";
         <Button text="LinkedIn" url={linkedInURL} />
       </Buttons>
     </section>
+    <section id="services" class="container">
+      <div>
+        <h3>Web frontend</h3>
+        <Image src={codeIcon} alt="Code icon" width="52" height="52" />
+      </div>
+      <div>
+        <h3>Backend</h3>
+        <Image src={codeIcon} alt="Code icon" width="52" height="52" />
+      </div>
+      <div>
+        <h3>API</h3>
+        <Image src={codeIcon} alt="Code icon" width="52" height="52" />
+      </div>
+      <div>
+        <h3>WordPress</h3>
+        <Image src={codeIcon} alt="Code icon" width="52" height="52" />
+      </div>
+    </section>
     <div id="webring">
       Part of
       <a
@@ -88,49 +108,81 @@ const linkedInURL = "https://linkedin.com/in/zartre";
 </Layout>
 
 <style lang="sass">
+  $hero-mid-breakpoint: 640px
+  $hero-small-breakpoint: 375px
+
   html
     background-color: var(--color-background)
   body
     padding-top: 58px
-    @media screen and (max-width: 640px)
+    @media screen and (max-width: $hero-mid-breakpoint)
       padding-top: 24px
-    @media screen and (max-width: 375px)
+    @media screen and (max-width: $hero-small-breakpoint)
       padding-top: 0
-  section#hero
-    padding: 16px 24px
-  svg#site-name
-    margin-bottom: 70px
-    @media screen and (max-width: 640px)
-      width: 100%
-      max-width: 300px
-      margin-bottom: 26px
-    @media screen and (max-width: 375px)
-      max-width: 240px
-      margin-bottom: 4px
-    path
-      fill: var(--color-text)
-  .bio
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: flex-end
-    margin-bottom: 24px
-    @media screen and (max-width: 640px)
-      flex-direction: column
-      align-items: flex-start
-      row-gap: 16px
-      margin-bottom: 44px
-    p
-      font-size: 32px
-      margin: 0
-      @media screen and (max-width: 640px)
-        font-size: 26px
-    span
-      font-size: 16px
-      margin: 0
-  .cta
-    a
-      font-size: 24px
+  section
+    &#hero
+      padding-top: 16px
+      padding-bottom: 16px
+      svg#site-name
+        margin-bottom: 70px
+        @media screen and (max-width: $hero-mid-breakpoint)
+          width: 100%
+          max-width: 300px
+          margin-bottom: 26px
+        @media screen and (max-width: $hero-small-breakpoint)
+          max-width: 240px
+          margin-bottom: 4px
+        path
+          fill: var(--color-text)
+      .bio
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: flex-end
+        margin-bottom: 24px
+        @media screen and (max-width: $hero-mid-breakpoint)
+          flex-direction: column
+          align-items: flex-start
+          row-gap: 16px
+          margin-bottom: 44px
+        p
+          font-size: 32px
+          margin: 0
+          @media screen and (max-width: $hero-mid-breakpoint)
+            font-size: 26px
+        span
+          font-size: 16px
+          margin: 0
+      .cta
+        a
+          font-size: 24px
+    &#services
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      margin-top: 74px
+      margin-bottom: 74px
+      border-top: 1px solid var(--color-text)
+      border-bottom: 1px solid var(--color-text)
+      @media screen and (max-width: $hero-mid-breakpoint)
+        margin-top: 44px
+        margin-bottom: 44px
+      div
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+        width: 50%
+        padding: 0.8em 1em 2em
+        @media screen and (min-width: 720px)
+          flex: 1
+          &:not(:last-child)
+            border-right: 1px solid var(--color-text)
+        @media screen and (max-width: 719px)
+          &:nth-child(odd)
+            border-right: 1px solid var(--color-text)
+          &:nth-child(1), &:nth-child(2)
+            border-bottom: 1px solid var(--color-text)
   #webring
     display: flex
     flex-direction: row
