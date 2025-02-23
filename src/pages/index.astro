@@ -28,6 +28,51 @@ const projects = [
   <main>
     <section id="hero" class="container-padded">
       <svg
+        width="377"
+        height="333"
+        viewBox="0 0 377 333"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        id="hero-blob"
+      >
+        <g filter="url(#filter0_f_2003_6)">
+          <circle cx="231" cy="102" r="166" fill="url(#paint0_radial_2003_6)"
+          ></circle>
+        </g>
+        <defs>
+          <filter
+            id="filter0_f_2003_6"
+            x="0"
+            y="-129"
+            width="462"
+            height="462"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"></feBlend>
+            <feGaussianBlur
+              stdDeviation="32.5"
+              result="effect1_foregroundBlur_2003_6"></feGaussianBlur>
+          </filter>
+          <radialGradient
+            id="paint0_radial_2003_6"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(231 102) rotate(90) scale(166)"
+          >
+            <stop stop-color="#41FF3E"></stop>
+            <stop offset="1" stop-color="#71CCF6"></stop>
+          </radialGradient>
+        </defs>
+      </svg>
+      <svg
         id="site-name"
         width="409"
         height="199"
@@ -157,10 +202,10 @@ const projects = [
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M4.84135 11.7654L3.37981 11.0164C1.50262 14.6944 0.983405 18.9169 1.91361 22.9401C2.84382 26.9633 5.16378 30.5293 8.46494 33.0101C11.7661 35.4908 15.8367 36.7272 19.9599 36.5015C24.0831 36.2758 27.9944 34.6025 31.0051 31.7762C34.0157 28.95 35.9326 25.1521 36.4181 21.0513C36.9036 16.9506 35.9266 12.81 33.6592 9.35889C31.3917 5.90774 27.9793 3.36733 24.0228 2.18504C20.0663 1.00275 15.8195 1.25441 12.0303 2.89571L12.6788 4.41206C16.1132 2.92485 19.9621 2.69721 23.5478 3.76924C27.1335 4.84126 30.2259 7.14419 32.2803 10.2724C34.3347 13.4006 35.2194 17.1534 34.7785 20.8698C34.3376 24.5863 32.5995 28.028 29.8702 30.5887C27.1409 33.1494 23.5955 34.6649 19.8585 34.8682C16.1216 35.0715 12.4327 33.9497 9.44165 31.7002C6.45062 29.4508 4.34927 26.218 3.50774 22.5714C2.66621 18.9247 3.13848 15.0981 4.84135 11.7654Z"
-            ></path>
+          ></path>
           <path
             d="M8.65048 8.43129L7.49038 11.5553L5.71827 8.74186L2.39327 8.61398L4.52163 6.05629L3.61731 2.85004L6.71394 4.08321L9.48173 2.22888L9.2625 5.55388L11.875 7.60917L8.65048 8.43129Z"
-            ></path>
+          ></path>
         </svg>
       </a>
     </div>
@@ -168,35 +213,46 @@ const projects = [
 </Layout>
 
 <style lang="sass">
+  $container-width: 1180px
   $hero-mid-breakpoint: 640px
   $hero-small-breakpoint: 375px
 
   html
     background-color: var(--color-background)
-  body
-    padding-top: 58px
-    @media screen and (max-width: $hero-mid-breakpoint)
-      padding-top: 24px
-    @media screen and (max-width: $hero-small-breakpoint)
-      padding-top: 0
   section
+    position: relative
     h3
       font-size: 1.3rem
       font-weight: 560
     &#hero
-      padding-top: 16px
-      padding-bottom: 16px
-      svg#site-name
-        margin-bottom: 70px
-        @media screen and (max-width: $hero-mid-breakpoint)
-          width: 100%
-          max-width: 300px
-          margin-bottom: 26px
-        @media screen and (max-width: $hero-small-breakpoint)
-          max-width: 240px
-          margin-bottom: 4px
-        path
-          fill: var(--color-text)
+      margin-top: 3rem
+      padding-top: 1.2rem
+      padding-bottom: 0.6rem
+      @media screen and (max-width: $hero-mid-breakpoint)
+        margin-top: 2rem
+        padding-top: 0
+      @media screen and (max-width: $hero-small-breakpoint)
+        margin-top: 1rem
+      svg
+        &#hero-blob
+          position: absolute
+          top: 0
+          right: 1em
+          z-index: -10
+          @media screen and (max-width: $container-width)
+            top: -3em
+            right: 0
+        &#site-name
+          margin-bottom: 70px
+          @media screen and (max-width: $hero-mid-breakpoint)
+            width: 100%
+            max-width: 300px
+            margin-bottom: 26px
+          @media screen and (max-width: $hero-small-breakpoint)
+            max-width: 240px
+            margin-bottom: 4px
+          path
+            fill: var(--color-text)
       .bio
         display: flex
         flex-direction: row
