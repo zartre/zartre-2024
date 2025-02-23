@@ -1,6 +1,6 @@
 ---
 title: "2024 - My Year in Tea (Home Cafe)"
-date: "2025-01-01"
+date: 2025-01-01
 categories:
   - "Life"
 tags:

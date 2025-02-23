@@ -1,6 +1,6 @@
 ---
 title: "Fixing Yamaha Clavinova Sustain Pedal"
-date: "2025-02-09"
+date: 2025-02-09
 categories:
   - "Tutorial"
 tags:

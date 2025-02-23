@@ -1,6 +1,6 @@
 ---
 title: "Corolla Altis Hybrid - รีวิวหลังใช้มา 2 ปี"
-date: "2025-01-16"
+date: 2025-01-16
 categories:
   - "Thoughts"
 tags:
