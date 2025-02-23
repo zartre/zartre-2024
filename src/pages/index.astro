@@ -1,7 +1,7 @@
 ---
 import Button from "../components/Button.astro";
 import Buttons from "../components/Buttons.astro";
-import codeIcon from "../icons/icons8-code-50.png"
+import codeIcon from "../icons/icons8-code-50.png";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
@@ -89,6 +89,17 @@ const linkedInURL = "https://linkedin.com/in/zartre";
         <h3>WordPress</h3>
         <Image src={codeIcon} alt="Code icon" width="52" height="52" />
       </div>
+    </section>
+    <section id="quote" class="container-padded">
+      <p>
+        I believe that technology is built to enrich people’s lives,<br />
+        and that it should be inclusive.
+      </p>
+      <p>
+        I love to solve problems<br />
+        the systematic and<br />
+        maintainable way.
+      </p>
     </section>
     <div id="webring">
       Part of
@@ -183,6 +194,15 @@ const linkedInURL = "https://linkedin.com/in/zartre";
             border-right: 1px solid var(--color-text)
           &:nth-child(1), &:nth-child(2)
             border-bottom: 1px solid var(--color-text)
+    &#quote
+      margin-top: 84px
+      margin-bottom: 84px
+      p
+        font-size: 2.5em
+        max-width: 670px
+      @media screen and (max-width: 669px)
+        br
+          display: none
   #webring
     display: flex
     flex-direction: row
