@@ -1,9 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
 import Buttons from "../components/Buttons.astro";
 import codeIcon from "../icons/icons8-code-50.png";
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
+import heroBlob from "../visuals/blob-frame.webp";
 
 const blogURL = import.meta.env.VITE_BLOG_URL;
 const linkedInURL = "https://linkedin.com/in/zartre";
@@ -27,51 +28,7 @@ const projects = [
 <Layout title="Nathan Zartre">
   <main>
     <section id="hero" class="container-padded">
-      <svg
-        width="377"
-        height="333"
-        viewBox="0 0 377 333"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        id="hero-blob"
-      >
-        <g filter="url(#filter0_f_2003_6)">
-          <circle cx="231" cy="102" r="166" fill="url(#paint0_radial_2003_6)"
-          ></circle>
-        </g>
-        <defs>
-          <filter
-            id="filter0_f_2003_6"
-            x="0"
-            y="-129"
-            width="462"
-            height="462"
-            filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
-          >
-            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="BackgroundImageFix"
-              result="shape"></feBlend>
-            <feGaussianBlur
-              stdDeviation="32.5"
-              result="effect1_foregroundBlur_2003_6"></feGaussianBlur>
-          </filter>
-          <radialGradient
-            id="paint0_radial_2003_6"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="translate(231 102) rotate(90) scale(166)"
-          >
-            <stop stop-color="#41FF3E"></stop>
-            <stop offset="1" stop-color="#71CCF6"></stop>
-          </radialGradient>
-        </defs>
-      </svg>
+      <Image id="hero-blob" src={heroBlob} alt="Decorative blob" width="380" height="336" />
       <svg
         id="site-name"
         width="409"
@@ -233,15 +190,15 @@ const projects = [
         padding-top: 0
       @media screen and (max-width: $hero-small-breakpoint)
         margin-top: 1rem
+      #hero-blob
+        position: absolute
+        top: 0
+        right: 0
+        z-index: -10
+        @media screen and (max-width: $container-width)
+          top: -3em
+          right: 0
       svg
-        &#hero-blob
-          position: absolute
-          top: 0
-          right: 1em
-          z-index: -10
-          @media screen and (max-width: $container-width)
-            top: -3em
-            right: 0
         &#site-name
           margin-bottom: 70px
           @media screen and (max-width: $hero-mid-breakpoint)
