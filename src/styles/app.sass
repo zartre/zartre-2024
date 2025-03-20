@@ -1,19 +1,25 @@
-@use "fonts"
+$container-width: 1180px
 
 :root
   --color-accent-light: hsl(142, 100%, 30%)
-  --color-background: #fff6f4
-  --color-text: #000000
+  --color-background: #F9F9F9
+  --color-background-dark: #202020
+  --color-text: #202020
   --color-text-light: #c6c6c6
+  --color-text-on-dark: #FFF
   --font-size-medium: 1.8rem
-  --font-family-main: "Overused Grotesk", system-ui, "Sukhumvit Set", "Leelawadee UI", sans-serif
+  --font-family-main: "Fustat", system-ui, "Sukhumvit Set", "Leelawadee UI", sans-serif
   --font-family-accent: "Roboto Serif", serif
 
   @media screen and (prefers-color-scheme: dark)
     --color-accent-light: hsl(142, 100%, 30%)
     --color-background: #171717
+    --color-background-dark:#000000
     --color-text: #fefefe
     --color-text-light: #555
+
+*
+  box-sizing: border-box
 
 html
   font-family: var(--font-family-main)
@@ -21,9 +27,6 @@ html
   color: var(--color-text)
   @media screen and (max-width: 600px)
     font-size: 16px
-
-footer
-  height: 100px
 
 a
   color: var(--color-text)
@@ -34,6 +37,11 @@ a
     text-decoration: none
 
 .container
-  max-width: 1000px
+  max-width: $container-width
   margin: 0 auto
-  padding: 0 1rem
+
+.container-padded
+  max-width: $container-width
+  margin: 0 auto
+  @media screen and (max-width: $container-width + 48)
+    padding: 0 24px
