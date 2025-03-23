@@ -1,25 +1,24 @@
 article
-  font-family: var(--font-family-main)
+  font-family: var(--font-family-text)
   font-size: 1rem
   font-variation-settings: "wdth" 100
-  font-weight: 430
+  font-weight: 400
 
   .meta
-    max-width: 960px
+    max-width: 940px
     margin: 3rem auto
     padding: 0 1rem
-    text-align: center
+    text-align: left
     @media screen and (max-width: 1079px)
       max-width: 600px
     h1
       margin: 1rem 0 0.8rem
-      font-size: 2.4rem
-      font-family: var(--font-family-accent)
-      font-weight: 300
+      font-size: 2.7rem
+      font-family: var(--font-family-main)
+      font-weight: 700
     p
       margin: 0.5rem 0
       font-family: var(--font-family-main)
-      text-align: center
       @media screen and (max-width: 1079px)
         max-width: 600px
 
@@ -56,23 +55,24 @@ article
         figcaption
           padding: 0
 
-    p > img
-      display: block
-      width: 120%
-      height: 100%
-      margin-left: -10%
-      margin-top: 3rem
-      margin-bottom: 3rem
-      @media screen and (max-width: 1079px)
-        width: 100%
-        margin-left: 0
-        margin-top: 2em
-        margin-bottom: 2em
+    p
+      font-family: var(--font-family-text)
+      & > img
+        display: block
+        width: 120%
+        height: 100%
+        margin-left: -10%
+        margin-top: 3rem
+        margin-bottom: 3rem
+        @media screen and (max-width: 1079px)
+          width: 100%
+          margin-left: 0
+          margin-top: 2em
+          margin-bottom: 2em
 
   h1, h2, h3, h4, h5, h6
-    font-family: var(--font-family-accent)
+    font-family: var(--font-family-main)
     font-weight: 400
-    font-variation-settings: "wdth" 30, "GRAD" 20
   h1
     font-size: 2.1rem
   h2
