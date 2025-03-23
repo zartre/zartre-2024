@@ -32,7 +32,7 @@ The main business logic server is powered by Scala, while the view part is manag
 ![](./images/approval.png)
 
 <div class="buttons">
-<a href="https://blog.zartre.com/kmitl-osrs-57b414fc1a0d" class="button">Read the story</a>
+<a href="https://blog.zartre.com/2018/kmitl-osrs/" class="button">Read the story</a>
 </div>
 
 **Roles:**
