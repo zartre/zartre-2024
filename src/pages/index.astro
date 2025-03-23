@@ -5,6 +5,9 @@ import Buttons from "../components/Buttons.astro";
 import Layout from "../layouts/Layout.astro";
 import heroBlob from "../visuals/blob-frame.webp";
 
+const htmlTitle = "Nathan Zartre";
+const htmlDescription = "Full-stack software engineer who is passionate in solving real world problems through code";
+
 const blogURL = import.meta.env.VITE_BLOG_URL;
 const linkedInURL = "https://linkedin.com/in/zartre";
 
@@ -24,7 +27,7 @@ const projects = [
 ];
 ---
 
-<Layout title="Nathan Zartre">
+<Layout title={htmlTitle} description={htmlDescription}>
   <main>
     <section id="hero" class="container-padded">
       <Image
