@@ -5,6 +5,9 @@ import { getCollection } from 'astro:content';
 import TopNav from "../components/TopNav.astro";
 import Layout from "../layouts/Layout.astro";
 
+const htmlTitle = "Work by Nathan";
+const htmlDescription = "A collection of work by Nathan";
+
 const works = await getCollection("work", ({ data }) => !data.hidden);
 
 const sortByDate = (a: CollectionEntry<"work">, b: CollectionEntry<"work">) => b.data.date.getTime() - a.data.date.getTime();
@@ -28,18 +31,18 @@ const sections = [
 ];
 ---
 
-<Layout title="Work by Nathan">
+<Layout title={htmlTitle} description={htmlDescription}>
   <TopNav />
   <main class="container">
     <h1>Nathan's Work</h1>
     {sections.map(( section ) => (
       <section>
         <h2>{section.title}</h2>
-        <r-grid columns=12>
+        <r-grid columns="12">
           {section.items.map((item) => (
-            <r-cell span-l=4 span=6 span-s=12>
+            <r-cell span-l="4" span="6" span-s="12">
               <a href={"/work/" + item.slug}>
-                <Image src={item.data.image} width=700 height=394 quality=90 alt={item.data.title} />
+                <Image src={item.data.image} width="700" height="394" quality="90" alt={item.data.title} />
                 <h4>{item.data.title}</h4>
                 <p>{item.data.period}</p>
               </a>
