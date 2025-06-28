@@ -1,7 +1,7 @@
 ---
-import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import TopNav from "../components/TopNav.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -10,19 +10,33 @@ const htmlDescription = "A collection of work by Nathan";
 
 const works = await getCollection("work", ({ data }) => !data.hidden);
 
-const sortByDate = (a: CollectionEntry<"work">, b: CollectionEntry<"work">) => b.data.date.getTime() - a.data.date.getTime();
+const sortByDate = (a: CollectionEntry<"work">, b: CollectionEntry<"work">) =>
+  b.data.date.getTime() - a.data.date.getTime();
 
-const compilation = works.filter(({data}) => {
-  return data.tags.includes("Portfolio");
-}).sort(sortByDate);
+const compilation = works
+  .filter(({ data }) => {
+    return data.tags.includes("Portfolio");
+  })
+  .sort(sortByDate);
 
-const projects = works.filter(({ data }) => {
-  return data.tags.every((tag) => !["Portfolio", "High school project", "University project"].includes(tag));
-}).sort(sortByDate);
+const projects = works
+  .filter(({ data }) => {
+    return data.tags.every(
+      (tag) =>
+        !["Portfolio", "High school project", "University project"].includes(
+          tag
+        )
+    );
+  })
+  .sort(sortByDate);
 
-const schoolProjects = works.filter(({ data }) => {
-  return data.tags.some((tag) => ["High school project", "University project"].includes(tag));
-}).sort(sortByDate);
+const schoolProjects = works
+  .filter(({ data }) => {
+    return data.tags.some((tag) =>
+      ["High school project", "University project"].includes(tag)
+    );
+  })
+  .sort(sortByDate);
 
 const sections = [
   { title: "Compilation", items: compilation },
@@ -34,43 +48,56 @@ const sections = [
 <Layout title={htmlTitle} description={htmlDescription}>
   <TopNav />
   <main class="container">
-    <h1>Nathan's Work</h1>
-    {sections.map(( section ) => (
-      <section>
-        <h2>{section.title}</h2>
-        <r-grid columns="12">
-          {section.items.map((item) => (
-            <r-cell span-l="4" span="6" span-s="12">
-              <a href={"/work/" + item.slug}>
-                <Image src={item.data.image} width="700" height="394" quality="90" alt={item.data.title} />
-                <h4>{item.data.title}</h4>
-                <p>{item.data.period}</p>
-              </a>
-            </r-cell>
-          ))}
-        </r-grid>
-      </section>
-    ))}
+    <h1>Work</h1>
+    {
+      sections.map((section) => (
+        <section>
+          <h2>{section.title}</h2>
+          <r-grid columns="12">
+            {section.items.map((item) => (
+              <r-cell span-l="4" span="6" span-s="12">
+                <a href={"/work/" + item.slug}>
+                  <Image
+                    src={item.data.image}
+                    width="700"
+                    height="394"
+                    quality="90"
+                    alt={item.data.title}
+                  />
+                  <h4>{item.data.title}</h4>
+                  <p>{item.data.period}</p>
+                </a>
+              </r-cell>
+            ))}
+          </r-grid>
+        </section>
+      ))
+    }
   </main>
-  <footer/>
+  <footer></footer>
 </Layout>
 
 <style lang="sass">
-body
-  background-color: var(--color-background)
-h1
-  margin: 2.5rem 0 3rem
-h4
-  margin: 0.8rem 0 0.5rem
-p
-  margin: 0 0 1rem
-img
-  display: block
-  width: 100%
-  height: auto
-section
-  a
-    text-decoration: none
-footer
-  height: 100px
+  body
+    background-color: var(--color-background)
+  main
+    padding: 0 1rem
+  h1
+    margin: 3rem 0
+    font-family: var(--font-family-main)
+    font-size: 2.7rem
+    font-weight: 300
+  h4
+    margin: 0.8rem 0 0.5rem
+  p
+    margin: 0 0 1rem
+  img
+    display: block
+    width: 100%
+    height: auto
+  section
+    a
+      text-decoration: none
+  footer
+    height: 100px
 </style>
