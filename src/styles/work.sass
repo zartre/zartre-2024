@@ -1,0 +1,111 @@
+article
+  font-family: var(--font-family-text)
+  font-size: 1rem
+  font-variation-settings: "wdth" 100
+  font-weight: 400
+
+  .meta
+    max-width: 940px
+    margin: 3rem auto
+    padding: 0 1rem
+    text-align: left
+    @media screen and (max-width: 1079px)
+      max-width: 600px
+    h1
+      margin: 1rem 0 0.8rem
+      font-size: 2.7rem
+      font-family: var(--font-family-main)
+      font-weight: 700
+    p
+      margin: 0.5rem 0
+      font-family: var(--font-family-main)
+      @media screen and (max-width: 1079px)
+        max-width: 600px
+
+  .cover
+    display: block
+    width: 100%
+    max-width: 820px
+    margin: 0 auto 3rem
+    height: auto
+
+  .content
+    max-width: 600px
+    margin: 2em auto
+    padding: 0 1rem
+
+    figure
+      margin: 2rem 0 2rem
+      border-left: 1px solid var(--color-text-light)
+      border-right: 1px solid var(--color-text-light)
+      border-bottom: 1px solid var(--color-text-light)
+      figcaption
+        font-size: 0.9rem
+        padding: 0 0.4rem 1rem
+        text-align: center
+        p
+          font-size: 0.9rem
+          text-align: center
+      p > img
+          margin-bottom: 0
+      @media screen and (max-width: 1079px)
+        border-left: none
+        border-right: none
+        border-bottom: none
+        figcaption
+          padding: 0
+
+    p
+      font-size: 1.15em
+      font-family: var(--font-family-text)
+      & > img
+        display: block
+        width: 120%
+        height: 100%
+        margin-left: -10%
+        margin-top: 3rem
+        margin-bottom: 3rem
+        @media screen and (max-width: 1079px)
+          width: 100%
+          margin-left: 0
+          margin-top: 2em
+          margin-bottom: 2em
+
+  h1, h2, h3, h4, h5, h6
+    font-family: var(--font-family-main)
+    font-weight: 400
+  h1
+    font-size: 2.1rem
+  h2
+    font-size: 1.8rem
+
+  p, ol, ul
+    letter-spacing: 0.02em
+    line-height: 1.4em
+
+  a
+    text-decoration: underline var(--color-text) dotted
+
+  strong
+    font-weight: 650
+
+  ol, ul
+    li, li > p
+      margin: 0.6em 0
+      text-align: left
+
+  blockquote
+    border-left: 2px solid var(--color-text)
+    font-size: 1.2em
+    margin: 1.2em 0
+    padding: 0.2em 0 0.2em 1.6em
+    p
+      font-size: 1em
+      text-align: left
+
+  hr
+    border-top: 2px dotted var(--color-text-light)
+    border-right: none
+    border-left: none
+    border-bottom: none
+    margin: 2em
