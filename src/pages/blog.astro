@@ -1,110 +1,13 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
-import TopNav from "../components/TopNav.astro";
-import Layout from "../layouts/Layout.astro";
-import { formatDate } from "../utils/date";
+import BlogArchiveLayout from "../layouts/BlogArchiveLayout.astro";
 
 const posts = await getCollection("blog", ({ data }) => data.public);
-const categories = [
-  ...new Set(
-    posts
-      .map((post) => post.data.categories)
-      .flat()
-      .filter((category) => category != undefined)
-  ),
-];
-const tags = [
-  ...new Set(
-    posts
-      .map((post) => post.data.tags)
-      .flat()
-      .filter((tag) => tag != undefined)
-  ),
-];
-
-const sortByDate = (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => {
-  return b.data.date.getTime() - a.data.date.getTime();
-};
 ---
 
-<Layout
-  title="Nathan's Blog"
+<BlogArchiveLayout
   description="A collection of blog posts by Nathan"
->
-  <TopNav />
-  <main class="container">
-    <h1>Blog posts</h1>
-    <ul class="categories">
-      {
-        categories.sort().map((category) => (
-          <li>
-            <a href={`/blog/categories/${category}`}>{category}</a>
-          </li>
-        ))
-      }
-    </ul>
-    <ul class="tags">
-      {
-        tags.sort().map((tag) => (
-          <li>
-            <a href={`/blog/tags/${tag}`}>{tag}</a>
-          </li>
-        ))
-      }
-    </ul>
-    <ul class="posts">
-      {
-        posts.sort(sortByDate).map((post) => (
-          <li>
-            <a href={`/blog/${post.slug}`}>
-              <h2>{post.data.title}</h2>
-            </a>
-            <time datetime={post.data.date.toISOString()}>
-              {formatDate(post.data.date)}
-            </time>
-          </li>
-        ))
-      }
-    </ul>
-  </main>
-  <footer></footer>
-</Layout>
-
-<style lang="sass">
-  body
-    background-color: var(--color-background)
-
-  .container
-    max-width: 800px
-
-  main
-    padding: 0 1rem
-    ul
-      list-style: none
-      padding: 0
-      &.posts
-        li
-          margin: 0 0 1.2em
-      &.tags
-        margin-bottom: 3.5em
-      &.categories, &.tags
-        li
-          display: inline-block
-          margin: 0.2em 0.5em 0.2em 0
-    h1
-      margin: 3rem 0
-      font-family: var(--font-family-main)
-      font-size: 2.7rem
-      font-weight: 300
-    h2
-      font-size: 1.15em
-      font-weight: 400
-      margin-bottom: 0.28em
-    time
-      font-size: 0.9em
-
-  footer
-    height: 100px
-</style>
+  heading="Blog posts"
+  matchedPosts={posts}
+/>

@@ -1,0 +1,135 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import TopNav from "../components/TopNav.astro";
+import { formatDate } from "../utils/date";
+import Layout from "./Layout.astro";
+
+const sortByDate = (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => {
+  return b.data.date.getTime() - a.data.date.getTime();
+};
+
+const allPosts = await getCollection("blog", ({ data }) => data.public);
+const categories = [
+  ...new Set(
+    allPosts
+      .map((post) => post.data.categories)
+      .flat()
+      .filter((category) => category != undefined)
+  ),
+];
+const tags = [
+  ...new Set(
+    allPosts
+      .map((post) => post.data.tags)
+      .flat()
+      .filter((tag) => tag != undefined)
+  ),
+];
+
+const getTitle = (title: string | undefined) => {
+  return title ? `${title} | Nathan's Blog` : "Nathan's Blog";
+};
+
+interface Props {
+  title?: string;
+  description: string;
+  heading: string;
+  matchedPosts: CollectionEntry<"blog">[];
+  currentCategory?: string;
+  currentTag?: string;
+}
+
+const {
+  title,
+  description,
+  heading,
+  matchedPosts,
+  currentCategory,
+  currentTag,
+}: Props = Astro.props;
+---
+
+<Layout title={getTitle(title)} description={description}>
+  <TopNav />
+  <main class="container">
+    <h1>{heading}</h1>
+    <ul class="categories">
+      {
+        categories.sort().map((category) => (
+          <li>
+            <a href={`/blog/categories/${category}`}>
+              {currentCategory === category ? (
+                <strong>{category}</strong>
+              ) : (
+                category
+              )}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="tags">
+      {
+        tags.sort().map((tag) => (
+          <li>
+            <a href={`/blog/tags/${tag}`}>
+              {currentTag === tag ? <strong>{tag}</strong> : tag}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="posts">
+      {
+        matchedPosts.sort(sortByDate).map((post) => (
+          <li>
+            <a href={`/blog/${post.slug}`}>
+              <h2>{post.data.title}</h2>
+            </a>
+            <time datetime={post.data.date.toISOString()}>
+              {formatDate(post.data.date)}
+            </time>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+  <footer></footer>
+</Layout>
+
+<style lang="sass">
+  body
+    background-color: var(--color-background)
+
+  .container
+    max-width: 800px
+
+  main
+    padding: 0 1rem
+    ul
+      list-style: none
+      padding: 0
+      &.posts
+        li
+          margin: 0 0 1.2em
+      &.tags
+        margin-bottom: 3.5em
+      &.categories, &.tags
+        li
+          display: inline-block
+          margin: 0.2em 0.5em 0.2em 0
+    h1
+      margin: 3rem 0
+      font-family: var(--font-family-main)
+      font-size: 2.7rem
+      font-weight: 300
+    h2
+      font-size: 1.15em
+      font-weight: 400
+      margin-bottom: 0.28em
+    time
+      font-size: 0.9em
+
+  footer
+    height: 100px
+</style>

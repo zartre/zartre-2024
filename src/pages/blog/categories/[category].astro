@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import BlogArchiveLayout from "../../../layouts/BlogArchiveLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => data.public);
+  const categories = [
+    ...new Set(
+      posts
+        .map((post) => post.data.categories)
+        .flat()
+        .filter((category) => category != undefined)
+    ),
+  ];
+
+  return categories.map((category) => {
+    const categoryPosts = posts.filter((post) =>
+      post.data.categories?.includes(category)
+    );
+    return {
+      params: { category },
+      props: { posts: categoryPosts },
+    };
+  });
+}
+
+const { category } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BlogArchiveLayout
+  title={category}
+  description={`Blog posts in the category: ${category}`}
+  heading={`Posted in ${category}`}
+  matchedPosts={posts}
+  currentCategory={category}
+/>
