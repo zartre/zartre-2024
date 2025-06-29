@@ -1,0 +1,31 @@
+---
+import "normalize.css";
+import BasicHtmlHead from "../components/BasicHtmlHead.astro";
+import "../styles/app.sass";
+import "../styles/article.sass";
+import "../styles/raster.css";
+
+interface Props {
+  title: string;
+  enableMathJax?: boolean;
+  shareImage?: string;
+}
+
+const { title, enableMathJax, shareImage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <BasicHtmlHead title={title + " | Nathan's Blog"}  shareImage={shareImage} />
+  { enableMathJax && (
+    <script>
+      var MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};
+    </script>
+    <script is:inline id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  )}
+  <body>
+    <slot />
+  </body>
+</html>

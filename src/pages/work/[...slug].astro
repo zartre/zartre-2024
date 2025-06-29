@@ -1,12 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
-import WorkLayout from '../../layouts/WorkLayout.astro';
-import TopNav from '../../components/TopNav.astro';
+import { getCollection } from "astro:content";
+import WorkLayout from "../../layouts/WorkLayout.astro";
+import TopNav from "../../components/TopNav.astro";
 
 export async function getStaticPaths() {
-  const workEntries = await getCollection('work');
-  return workEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+  const workEntries = await getCollection("work");
+  return workEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
@@ -15,7 +16,7 @@ const { Content } = await entry.render();
 ---
 
 <WorkLayout title={entry.data.title}>
-  <TopNav/>
+  <TopNav />
   <article>
     <div class="meta">
       <h1>{entry.data.title}</h1>
@@ -25,10 +26,12 @@ const { Content } = await entry.render();
       <Content />
     </div>
   </article>
-  <footer/>
+  <footer></footer>
 </WorkLayout>
 
 <style lang="sass">
-body
-  background-color: var(--color-background)
+  body
+    background-color: var(--color-background)
+  footer
+    height: 100px
 </style>
