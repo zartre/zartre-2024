@@ -10,6 +10,7 @@ const blogCollection = defineCollection({
       categories: z.optional(z.array(z.string())),
       tags: z.optional(z.array(z.string())),
       public: z.optional(z.boolean()),
+      enableMathJax: z.optional(z.boolean()).default(false),
     }),
 });
 

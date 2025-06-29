@@ -7,14 +7,23 @@ import "../styles/raster.css";
 
 interface Props {
   title: string;
+  enableMathJax?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, enableMathJax } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <BasicHtmlHead title={title + " | Nathan's Blog"} />
+  { enableMathJax && (
+    <script>
+      var MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  )}
   <body>
     <slot />
   </body>
