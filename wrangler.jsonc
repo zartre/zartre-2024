@@ -3,7 +3,8 @@
   "name": "zartre-2024",
   "compatibility_date": "2025-06-29",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "not_found_handling": "404-page"
   },
   "routes": [
     {
