@@ -8,14 +8,15 @@ import "../styles/raster.css";
 interface Props {
   title: string;
   enableMathJax?: boolean;
+  shareImage?: string;
 }
 
-const { title, enableMathJax } = Astro.props;
+const { title, enableMathJax, shareImage } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <BasicHtmlHead title={title + " | Nathan's Blog"} />
+  <BasicHtmlHead title={title + " | Nathan's Blog"}  shareImage={shareImage} />
   { enableMathJax && (
     <script>
       var MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};

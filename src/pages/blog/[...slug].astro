@@ -17,7 +17,11 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BlogLayout title={entry.data.title} enableMathJax={entry.data.enableMathJax}>
+<BlogLayout
+  title={entry.data.title}
+  enableMathJax={entry.data.enableMathJax}
+  shareImage={entry.data.coverImage?.src}
+>
   <TopNav />
   <article>
     <div class="meta">
