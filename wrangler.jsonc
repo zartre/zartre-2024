@@ -19,5 +19,8 @@
   ],
   "vars": {
     "VITE_BLOG_URL": "/blog"
+  },
+  "build": {
+    "command": "git submodule update --init && npm run build"
   }
 }
