@@ -6,11 +6,6 @@
     "directory": "./dist",
     "not_found_handling": "404-page"
   },
-  "observability": {
-    "logs": {
-      "enabled": true
-    }
-  },
   "routes": [
     {
       "pattern": "zartre.com",
@@ -19,8 +14,5 @@
   ],
   "vars": {
     "VITE_BLOG_URL": "/blog"
-  },
-  "build": {
-    "command": "git submodule update --init && npm run build"
   }
 }
