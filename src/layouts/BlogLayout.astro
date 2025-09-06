@@ -4,6 +4,7 @@ import BasicHtmlHead from "../components/BasicHtmlHead.astro";
 import "../styles/app.sass";
 import "../styles/article.sass";
 import "../styles/raster.css";
+import HumanFooter from "../components/HumanFooter.astro";
 
 interface Props {
   title: string;
@@ -28,4 +29,5 @@ const { title, enableMathJax, shareImage } = Astro.props;
   <body>
     <slot />
   </body>
+  <HumanFooter />
 </html>
