@@ -3,6 +3,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import TopNav from "../components/TopNav.astro";
 import { formatDate } from "../utils/date";
 import Layout from "./Layout.astro";
+import HumanFooter from "../components/HumanFooter.astro";
 
 const sortByDate = (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => {
   return b.data.date.getTime() - a.data.date.getTime();
@@ -94,7 +95,7 @@ const {
       }
     </ul>
   </main>
-  <footer></footer>
+  <HumanFooter />
 </Layout>
 
 <style lang="sass">
